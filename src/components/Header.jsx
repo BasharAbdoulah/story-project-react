@@ -6,6 +6,8 @@ import {useNavigate} from "react-router-dom"
 function Header({ forCheck }) {
 
   const route = useNavigate()
+
+  // show the cart by clicking on cart icon
   const showCart = () => {
     route("/cart")
   }

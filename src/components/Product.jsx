@@ -4,6 +4,8 @@ import {useNavigate} from "react-router-dom"
 function Product({id, img, title, price}) {
   
   const route = useNavigate();
+
+  // showing product deteils by click on any product
   const showFun = () => {
     route("/products")
     window.scrollTo({

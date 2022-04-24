@@ -5,7 +5,9 @@ class Details extends React.Component {
   render() {
     const { increasePro, discreasePro, productsNumber, addFun, images } =
       this.props;
+
     const { description, name, price } = this.props.products[1];
+
     return (
       <>
         <section className="product-info">

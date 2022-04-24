@@ -32,31 +32,36 @@ class App extends React.Component {
       productsNumber: 0,
       numberOnCart: 0,
     };
+
     this.addProducts = this.addProducts.bind(this);
     this.removeProducts = this.removeProducts.bind(this);
     this.increasePro = this.increasePro.bind(this);
     this.discreasePro = this.discreasePro.bind(this);
   }
 
-  // increase products
-
+  // increase products function
   increasePro = () => {
     this.setState({ productsNumber: this.state.productsNumber + 1 });
   };
+  //discrease products function
   discreasePro = () => {
     this.setState({ productsNumber: this.state.productsNumber - 1 });
   };
 
+  // add products to cart comp by slicing from main products array
   addProducts() {
     this.setState({
       products: productInfo.slice(0, this.state.productsNumber),
     });
     this.setState({ numberOnCart: this.state.productsNumber });
   }
+
+  // remove products from cart list by click on CHECK OUT
   removeProducts(e) {
     e.target.parentElement.remove();
     this.setState({ numberOnCart: this.state.numberOnCart - 1 });
   }
+
   render() {
     return (
       <BrowserRouter>
